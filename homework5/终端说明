@@ -1,0 +1,6 @@
+1. roscore
+2. take_photo(node)
+3. sound_play(node)
+4. usb_camera(node)
+5. say(node)
+6. face_detect(node)
