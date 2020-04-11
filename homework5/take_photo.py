@@ -1,17 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*- 
 
-
-# author: Tianyi Li
-# time: 2020/3/19
-# 使用百度API进行关键点视觉处理
-# 实际上可以使用openpose，使用同方法替代，但是其算力要求过高。
-# 现在是检测肘，腕，肩三个位置判断。
-# 发布消息：
-#   视野中目标的位置
-#   带有目标的图像
-
-
 # 视觉处理
 import cv2
 
