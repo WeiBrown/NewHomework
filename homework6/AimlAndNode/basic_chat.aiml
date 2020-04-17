@@ -1,0 +1,47 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO </pattern>
+        <template>
+            Hey
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HEY JACK</pattern>
+        <template>
+            Hey,please tell me where do you want to go
+        </template>
+    </category>
+
+    <category>
+        <pattern>GO TO THE BEDROOM</pattern>
+        <template>
+            OK, please wait a few seconds
+        </template>
+    </category>
+
+    <category>
+        <pattern>GO TO THE KITCHEN</pattern>
+        <template>
+            OK, please wait a few seconds
+        </template>
+    </category>
+
+    <category>
+        <pattern>GO TO THE WASHROOM</pattern>
+        <template>
+            OK, please wait a few seconds
+        </template>
+    </category>
+
+    <category>
+        <pattern>GO TO THE DOOR</pattern>
+        <template>
+            OK, please wait a few seconds
+        </template>
+    </category>
+
+</aiml>
+

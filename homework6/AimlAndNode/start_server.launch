@@ -1,0 +1,6 @@
+<launch>
+
+    <param name="aiml_path" value="$(find homework)/src" />
+    <node name="aiml_voice_server" pkg="homework" type="aiml_voice_server.py" output="screen" />
+    
+</launch>
