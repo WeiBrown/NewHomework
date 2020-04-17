@@ -5,5 +5,5 @@
 3.    rostopic echo /lm_data
 4.    ./recognizer.py
 5.    roslaunch start_server.launch
-6.    rosrun sound_play sndplay_node.py
+6.    rosrun sound_play soundplay_node.py
 7.    ./robot_tts.py
