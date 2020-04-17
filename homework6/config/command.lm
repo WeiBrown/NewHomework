@@ -1,0 +1,64 @@
+Language model created by QuickLM on Fri Apr 17 01:24:13 EDT 2020
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 6 sentences and 12 words
+
+\data\
+ngram 1=12
+ngram 2=16
+ngram 3=13
+
+\1-grams:
+-1.0142 </s> -0.3010
+-1.0142 <s> -0.2568
+-1.7924 BEDROOM -0.2568
+-1.7924 DOOR -0.2568
+-1.1903 GO -0.2721
+-1.7924 HELLO -0.2568
+-1.7924 HEY -0.2940
+-1.7924 JACK -0.2568
+-1.7924 KITCHEN -0.2568
+-1.1903 THE -0.2721
+-1.1903 TO -0.2721
+-1.7924 WASHROOM -0.2568
+
+\2-grams:
+-0.4771 <s> GO 0.0000
+-1.0792 <s> HELLO 0.0000
+-1.0792 <s> HEY 0.0000
+-0.3010 BEDROOM </s> -0.3010
+-0.3010 DOOR </s> -0.3010
+-0.3010 GO TO 0.0000
+-0.3010 HELLO </s> -0.3010
+-0.3010 HEY JACK 0.0000
+-0.3010 JACK </s> -0.3010
+-0.3010 KITCHEN </s> -0.3010
+-0.9031 THE BEDROOM 0.0000
+-0.9031 THE DOOR 0.0000
+-0.9031 THE KITCHEN 0.0000
+-0.9031 THE WASHROOM 0.0000
+-0.3010 TO THE 0.0000
+-0.3010 WASHROOM </s> -0.3010
+
+\3-grams:
+-0.3010 <s> GO TO
+-0.3010 <s> HELLO </s>
+-0.3010 <s> HEY JACK
+-0.3010 GO TO THE
+-0.3010 HEY JACK </s>
+-0.3010 THE BEDROOM </s>
+-0.3010 THE DOOR </s>
+-0.3010 THE KITCHEN </s>
+-0.3010 THE WASHROOM </s>
+-0.9031 TO THE BEDROOM
+-0.9031 TO THE DOOR
+-0.9031 TO THE KITCHEN
+-0.9031 TO THE WASHROOM
+
+\end\
