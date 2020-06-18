@@ -1,0 +1,19 @@
+<launch>
+	<!-- pocketsphinx关键词识别-->
+	<arg name="dict" default="/home/dell/catkin_ws/src/receptionist_speech/speech/wakeup/7330.dic" />
+	<arg name="kws"  default="/home/dell/catkin_ws/src/receptionist_speech/speech/wakeup/wakeup.kwlist" />
+
+	<include file="$(find pocketsphinx)/launch/kws.launch">
+		<arg name="dict" value="$(arg dict)" />
+		<arg name="kws"  value="$(arg kws)" />
+	</include>
+
+	<!--soundplay节点-->
+	<node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+
+	<!--speech控制节点-->
+	<node pkg="whereisthis_speech" type="where_is_this_speech.py" name="speech_whereisthis" launch-prefix="xterm -e" />
+
+	<!--speech recording节点-->
+	<node pkg="whereisthis_speech" type="get_audio.py" name="launching_recorder" launch-prefix="xterm -e" />
+</launch>

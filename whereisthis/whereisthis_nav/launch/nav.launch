@@ -1,0 +1,51 @@
+<launch>
+
+    <!-- 设置摄像头参数 -->
+    
+
+      <include file="$(find turtlebot_bringup)/launch/minimal.launch" /> 
+    
+    <!-- 
+        设置Gmapping包如下
+    -->
+       <!-- 设置摄像头参数  确保摄像头参数正确-->
+        <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+        <arg name="rgb_processing" value="false" />
+        <arg name="depth_registration" value="false" />
+        <arg name="depth_processing" value="false" />
+        <arg name="scan_topic" value="/scan" />
+        <arg name="3d_sensor" value="kinect"/>
+    </include>
+
+  <!-- Define laser type-->
+  <!--<arg name="laser_type" default="hokuyo" />-->
+
+  <!-- laser driver -->
+  <!--<include file="$(find turtlebot_navigation)/laser/driver/$(arg laser_type)_laser.launch" />-->
+
+
+    <!-- 加载地图 -->
+    <arg name="map_file" default="/home/dell/catkin_ws/src/Whereisthis/whereisthis_nav/maps.yaml" /> 
+    <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
+
+    <!-- 设置amcl-->
+    <arg name="initial_pose_x" default="-0.00616357"/> <!-- 设置初始坐标 -->
+    <arg name="initial_pose_y" default="1.35471"/> 
+    <arg name="initial_pose_a" default="0"/>
+
+    <include file="$(find turtlebot_navigation)/launch/includes/amcl/amcl.launch.xml">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    </include>
+
+    <!-- 加载move_base -->
+    <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+    	<remap from="/cmd_vel" to="/cmd_vel_mux/input/navi"/>
+     
+
+  <!--<include file="$(find kamerider_navigation)/launch/real/tb_amcl.launch" />-->
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch" />
+  <node pkg="whereisthis_nav" type="pub_present" name="pub_present" output="screen"/>
+  <node pkg="whereisthis_nav" type="where_nav.py" name="where_nav_core" output="screen"/>
+</launch>

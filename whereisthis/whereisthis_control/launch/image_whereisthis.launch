@@ -1,0 +1,12 @@
+<launch>
+
+    <!--Start camera-->
+    <!--<include file="$(find freenect_launch)/launch/freenect.launch"/>-->
+
+    <!--Start rate-transfer node-->
+    <node name="image_rate_transfer" pkg="whereisthis_image" type="image_rate_transfer.py" output="screen"/>
+
+    <!--Start node-->
+    <!--<node name="image_findperson" pkg="whereisthis_image" type="image_whereisthis.py" output="screen"/>-->
+
+</launch>

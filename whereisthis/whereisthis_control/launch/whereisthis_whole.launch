@@ -1,0 +1,19 @@
+<launch>
+
+    <!--navigation-->
+    <!--should be launched first, cuz it includes 'turtlebot_bringup minimal.launch'-->
+    <include file="$(find whereisthis_control)/launch/nav.launch"/>
+
+    <!--arm-->
+    <!--<include file="$(find whereisthis_control)/launch/arm_whereisthis.launch"/>-->
+
+    <!--speech-->
+    <include file="$(find whereisthis_control)/launch/whereisthis_speech.launch"/>
+
+    <!--image-->
+    <include file="$(find whereisthis_control)/launch/image_whereisthis.launch"/>
+
+    <!--control console-->
+    <node name="whereisthis_controlConsole" pkg="whereisthis_control" type="whereisthis_ControlConsole.py" output="screen"/>
+
+</launch>

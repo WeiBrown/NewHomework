@@ -1,0 +1,11 @@
+记得换nav.launch文件里面的地图
+
+markpoint 
+unit8 id
+1   A
+2   B
+3   C
+4   D
+unit8 side
+0   left
+1   right

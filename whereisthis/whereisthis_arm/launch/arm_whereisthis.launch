@@ -1,0 +1,6 @@
+<launch>
+    <!--Start the robot arm-->
+    <include file="$(find whereisthis_arm)/launch/arm.launch"/>
+    <!--Start arm control node-->
+    <node name="arm" pkg="whereisthis_arm" type="arm_whereisthis.py" output="screen"/>
+</launch>
